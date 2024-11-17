@@ -1,0 +1,13 @@
+<div class="slide">
+  <div class="title">
+    <h1>{{ title() }}</h1>
+    @if (description()) {
+    <p>{{ description() }}</p>
+    }
+  </div>
+  @if (image1()) {
+  <img title="image1()" src="{{ image1() }}" />
+  } @if (image2()) {
+  <img src="image2()" />
+  }
+</div>

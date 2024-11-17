@@ -14,4 +14,10 @@ export const routes: Routes = [
       return import('./todo/todo.component').then((m) => m.TodoComponent);
     },
   },
+  {
+    path: 'about',
+    loadComponent: () => {
+      return import('./about/about.component').then((m) => m.AboutComponent);
+    },
+  },
 ];

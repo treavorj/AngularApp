@@ -1,0 +1,144 @@
+.resume {
+  hr {
+    margin: 10px 0;
+  }
+}
+
+
+
+
+
+.slides {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  perspective: 1px;
+  // transform-style: preserve-3d;
+  transform-style: flat;
+  overflow-x: hidden;
+}
+
+
+h1 {
+  font-size: 250%;
+  text-shadow: 0 2px 10px #000;
+}
+
+p {
+  font-size: 140%;
+  line-height: 150%;
+  color: #333;
+}
+
+.slide {
+  position: relative;
+  padding: 25vh 10%;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+  transform-style: inherit;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  max-width: 480px;
+  max-height: 360px;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(240, 230, 220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, .7);
+}
+
+.title {
+  width: 50%;
+  padding: 5%;
+  border-radius: 5px;
+  background: rgba(240, 230, 220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+.slide:nth-child(2n) {
+  .title {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  img {
+    transform: translateZ(.25px) scale(.95) translateX(94%) translateY(-100%) rotate(-5deg);
+  }
+
+  img:last-of-type {
+    transform: translateZ(.4px) scale(.8) translateX(104%) translateY(-40%) rotate(2deg);
+  }
+}
+
+.slide:nth-child(2n+1) {
+  .title {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  img {
+    transform: translateZ(.25px) scale(.95) translateX(-94%) translateY(-100%) rotate(2deg);
+  }
+
+  img:last-of-type {
+    transform: translateZ(.4px) scale(.8) translateX(-104%) translateY(-40%) rotate(-5deg);
+  }
+}
+
+.slide,
+.slide:before {
+  background: 50% 50% / cover;
+}
+
+.header {
+  text-align: center;
+  font-size: 175%;
+  color: #fff;
+}
+
+#title {
+  background-image: url("/img/family.jpg");
+  z-index: 2;
+}
+
+#title h1 {
+  // transform: translateZ(.25px) scale(.75);
+  transform-origin: 50% 100%;
+
+}
+
+#slide1 {
+  background-image: url("/img/colorado.jpg");
+  z-index: 2;
+}
+
+#slide2 {
+  background-image: url("/img/grandcanyon.jpg");
+  z-index: 2;
+}
+
+#slide3 {
+  background-image: url("https://picsum.photos/980/600");
+  z-index: 2;
+}
+
+#slide4 {
+  background: #222;
+}

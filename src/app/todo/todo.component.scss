@@ -1,6 +1,10 @@
 .todo-app {
-  width: 400px;
-  margin: 0 auto;
+  max-width: 800px;
+  justify-self: center;
+
+  hr {
+    margin-bottom: 1rem;
+  }
 
   .add-todo {
     display: flex;

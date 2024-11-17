@@ -1,7 +1,14 @@
 <div class="header">
-  <div class="title" routerLink="/">{{title()}}</div>
+  <div class="title" routerLink="/">{{ title() }}</div>
   <nav class="nav-bar">
-    <a routerLink="/" routerLinkActive="active" routerLinkActiveOptions="{ exact: true }" class="nav-item">Home</a>
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      routerLinkActiveOptions="{ exact: true }"
+      class="nav-item"
+      >Home</a
+    >
+    <a routerLink="/about" routerLinkActive="active" class="nav-item">About</a>
     <a routerLink="/todo" routerLinkActive="active" class="nav-item">Todo</a>
   </nav>
 </div>
