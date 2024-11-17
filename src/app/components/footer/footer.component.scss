@@ -1,0 +1,24 @@
+.footer {
+  background-color: var(--color-background-emphasis);
+  color: var(--color-text-emphasis);
+  padding: 1rem;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+.theme-toggle:hover {
+    color: var(--color-bold);
+}

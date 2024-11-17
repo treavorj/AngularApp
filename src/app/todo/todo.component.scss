@@ -1,0 +1,41 @@
+.todo-app {
+  width: 400px;
+  margin: 0 auto;
+
+  .add-todo {
+    display: flex;
+    margin-bottom: 15px;
+
+    input {
+      flex: 1;
+      padding: 8px;
+      font-size: 16px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .archived-todos {
+    place-self: center;
+    margin: 20px 0;
+    justify-items: center;
+
+
+    button {
+      width: 30ch;
+
+      .arrow {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .toggle-view {
+    margin: 20px 0;
+    text-align: center;
+  }
+}

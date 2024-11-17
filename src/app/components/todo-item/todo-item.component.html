@@ -1,0 +1,18 @@
+<li [class.completed]="todo().completed">
+  <input
+    type="checkbox"
+    [checked]="todo().completed"
+    (change)="markComplete(todo().id)"
+  />
+  <div class="todo">
+    <p>{{ todo().title }}</p>
+  </div>
+  <div class="actions">
+    <button (mousedown)="archive(todo().id)" title="Archive">
+      <i class="fas fa-archive"></i>
+    </button>
+    <button (mousedown)="delete(todo().id)" title="Delete">
+      <i class="fas fa-trash"></i>
+    </button>
+  </div>
+</li>

@@ -1,0 +1,185 @@
+/************ CSS RESET ************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html,
+body {
+  margin: 0
+}
+
+/************ Global Vars ***********/
+:root {
+  /**** Colors ****/
+  /* Standard colors */
+  --color-bold: #ff7727;
+  --color-relaxed: #2d4b75;
+  --color-ok: #1e9146;
+  --color-ng: #dc0032;
+  --color-info: var(--color-relaxed);
+  --color-cancel: #f0a000;
+
+  /* Light mode colors */
+  --color-background-emphasis-light: var(--color-relaxed);
+  --color-background-light: #fff;
+  --color-text-light: #333;
+  --color-text-emphasis-light: #fff;
+
+  /* Dark mode colors */
+  --color-background-emphasis-dark: var(--color-relaxed);
+  --color-background-dark: #333;
+  --color-text-dark: #eee;
+  --color-text-emphasis-dark: #fff;
+
+  /* Default colors to light mode */
+  --color-background: var(--color-background-light);
+  --color-text: var(--color-text-light);
+  --color-background-emphasis: var(--color-background-emphasis-light);
+  --color-text-emphasis: var(--color-text-emphasis-light);
+
+  /**** Layout ****/
+  --layout-header-height: 2.4rem;
+  --layout-header-font-size: calc(var(var(--layout-header-height))/1.8) font-size: 16px;
+  font-family: Helvetica, sans-serif;
+}
+
+/************ COLOR SETUP ***********/
+
+/* Set dark mode */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light-mode) {
+    --color-background: var(--color-background-dark);
+    --color-text: var(--color-text-dark);
+    --color-background-emphasis: var(--color-background-emphasis-dark);
+    --color-text-emphasis: var(--color-text-emphasis-dark);
+  }
+}
+
+:root.dark-mode {
+  --color-background: var(--color-background-dark);
+  --color-text: var(--color-text-dark);
+  --color-background-emphasis: var(--color-background-emphasis-dark);
+  --color-text-emphasis: var(--color-text-emphasis-dark);
+}
+
+main.div {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s
+}
+
+/************ Layout **********/
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+
+/********** BUTTONS **********/
+.buttonOk {
+  cursor: pointer;
+  background-color: var(--color-ok);
+  color: var(--color-text-dark);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.buttonNg {
+  cursor: pointer;
+  background-color: var(--color-ng);
+  color: var(--color-text-dark);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.buttonCancel {
+  cursor: pointer;
+  background-color: var(--color-cancel);
+  color: var(--color-text-dark);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.buttonInfo {
+  cursor: pointer;
+  background-color: var(--color-info);
+  color: var(--color-text-dark);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.buttonDisabled {
+  background-color: var(--color-background-emphasis);
+  color: var(--color-text-emphasis);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.buttonSmall {
+  margin: 2px;
+  border-radius: 30px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.buttonMedium {
+  margin: 5px;
+  border-radius: 40px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.buttonLarge {
+  margin: 5px;
+  border-radius: 80px;
+  padding: 20px 40px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}

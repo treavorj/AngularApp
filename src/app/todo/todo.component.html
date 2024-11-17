@@ -1,0 +1,32 @@
+<div class="todo-app">
+  <h1>Todo List</h1>
+  <div class="add-todo">
+    <input
+      [(ngModel)]="newTodo"
+      (keydown.enter)="addTodo()"
+      placeholder="Add a new todo"
+    />
+    <button (mousedown)="addTodo()" class="buttonInfo buttonMedium">
+      Add Todo
+    </button>
+  </div>
+  <ul>
+    @for (todo of todoService.TodoActive(); track todo.id) {
+    <app-todo-item [todo]="todo" />
+    }
+  </ul>
+  @if (todoService.TodoArchive().length!=0){
+  <div class="archived-todos">
+    <button (mousedown)="toggleArchivedView()" class="buttonInfo buttonMedium">
+      {{ showArchived() ? "Hide Archived Todos" : "Show Archived Todos" }}
+      <div class="arrow">{{ showArchived() ? "↑" : "↓" }}</div>
+    </button>
+  </div>
+  @if (showArchived()) {
+  <ul>
+    @for (todo of todoService.TodoArchive(); track todo.id) {
+    <app-todo-item [todo]="todo" />
+    }
+  </ul>
+  } }
+</div>

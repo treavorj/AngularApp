@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  padding-inline: 16px;
+  background-color: var(--color-background-emphasis);
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text-emphasis);
+}
+
+.title {
+  padding-block: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 1px;
+}
+
+.nav-item {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-size: var(--layout-header-font-size);
+  align-content: center;
+  border-radius: 4px;
+  padding: 5px 1rem;
+}
+
+.nav-item:hover {
+  background-color: var(--color-relaxed);
+}
+
+.router-link-active {
+  text-decoration: underline;
+  background-color: var(--color-bold);
+  font-weight: bold;
+}
+
+.nav-item:hover:not(.active) {
+  background-color: var(--color-bold);
+}

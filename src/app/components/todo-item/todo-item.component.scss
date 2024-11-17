@@ -1,0 +1,45 @@
+ li {
+   border: 1px solid #ddd;
+   border-radius: 10px;
+   padding: 15px;
+   margin-bottom: 10px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+   input {
+     margin-right: 10px;
+   }
+
+   &.completed {
+     text-decoration: line-through;
+     color: var(--color-text);
+   }
+
+   .todo {
+     width: 100%
+   }
+
+ }
+
+ .actions {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+
+   button {
+     margin-left: 5px;
+     padding: 5px 10px;
+     border: none;
+     cursor: pointer;
+     background-color: var(--color-background);
+     border-radius: 100%;
+     color: var(--color-text);
+
+     &:hover {
+       background-color: var(--color-background-emphasis);
+       color: var(--color-text-emphasis)
+     }
+   }
+ }
