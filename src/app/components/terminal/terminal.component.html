@@ -1,0 +1,46 @@
+<div class="terminal" (click)="focusInput()">
+  <div>
+    <!-- prettier-ignore -->
+    <p>
+&nbsp;__&nbsp;&nbsp;&nbsp;&nbsp;__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______&nbsp;&nbsp;&nbsp;______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__&nbsp;&nbsp;&nbsp;__&nbsp;&nbsp;&nbsp;______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______
+</p>
+    <!-- prettier-ignore -->
+    <p>
+/\&nbsp;"-./&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;/\&nbsp;&nbsp;___\&nbsp;&nbsp;&nbsp;/\&nbsp;&nbsp;___\&nbsp;&nbsp;&nbsp;/\__&nbsp;&nbsp;_\&nbsp;&nbsp;&nbsp;&nbsp;/\__&nbsp;&nbsp;_\&nbsp;/\&nbsp;&nbsp;==&nbsp;\&nbsp;&nbsp;&nbsp;/\&nbsp;&nbsp;___\&nbsp;&nbsp;&nbsp;/\&nbsp;&nbsp;__&nbsp;\&nbsp;&nbsp;&nbsp;/\&nbsp;\&nbsp;/&nbsp;/&nbsp;&nbsp;/\&nbsp;&nbsp;__&nbsp;\&nbsp;&nbsp;&nbsp;/\&nbsp;&nbsp;==&nbsp;\
+</p>
+    <!-- prettier-ignore -->
+    <p>
+\&nbsp;\&nbsp;\-./\&nbsp;\&nbsp;&nbsp;\&nbsp;\&nbsp;&nbsp;__\&nbsp;&nbsp;&nbsp;\&nbsp;\&nbsp;&nbsp;__\&nbsp;&nbsp;&nbsp;\/_/\&nbsp;\/&nbsp;&nbsp;&nbsp;&nbsp;\/_/\&nbsp;\/&nbsp;\&nbsp;\&nbsp;&nbsp;__<&nbsp;&nbsp;&nbsp;\&nbsp;\&nbsp;&nbsp;__\&nbsp;&nbsp;&nbsp;\&nbsp;\&nbsp;&nbsp;__&nbsp;\&nbsp;&nbsp;\&nbsp;\&nbsp;\'/&nbsp;&nbsp;&nbsp;\&nbsp;\&nbsp;\/\&nbsp;\&nbsp;&nbsp;\&nbsp;\&nbsp;&nbsp;__<
+</p>
+    <!-- prettier-ignore -->
+    <p>
+&nbsp;\&nbsp;\_\&nbsp;\&nbsp;\_\&nbsp;&nbsp;\&nbsp;\_____\&nbsp;&nbsp;\&nbsp;\_____\&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;\_\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;\_\&nbsp;&nbsp;\&nbsp;\_\&nbsp;\_\&nbsp;&nbsp;\&nbsp;\_____\&nbsp;&nbsp;\&nbsp;\_\&nbsp;\_\&nbsp;&nbsp;\&nbsp;\__|&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;\_____\&nbsp;&nbsp;\&nbsp;\_\&nbsp;\_\
+</p>
+    <!-- prettier-ignore -->
+    <p>
+&nbsp;&nbsp;\/_/&nbsp;&nbsp;\/_/&nbsp;&nbsp;&nbsp;\/_____/&nbsp;&nbsp;&nbsp;\/_____/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/_/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/_/&nbsp;&nbsp;&nbsp;\/_/&nbsp;/_/&nbsp;&nbsp;&nbsp;\/_____/&nbsp;&nbsp;&nbsp;\/_/\/_/&nbsp;&nbsp;&nbsp;\/_/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\/_____/&nbsp;&nbsp;&nbsp;\/_/&nbsp;/_/
+</p>
+    <p>&nbsp;</p>
+    <div>Type "help" for a list of commands</div>
+    @for (line of lines(); track $index) {
+    <div>{{ line }}</div>
+    }
+    <div class="input-line">
+      <span>{{ prompt() }}</span>
+      <div class="input-container">
+        <input
+          #terminalInput
+          [(ngModel)]="currentInput"
+          (keydown)="handleKeyDown($event)"
+          (keydown.enter)="executeCommand()"
+          [style.width]="inputWidth()"
+          maxlength="100"
+          title="input"
+        />
+        <span #measureText class="measure-text" [style.width]="inputWidth()">
+          {{ currentInput() }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+.terminal {
+  background: #000;
+  color: #00ff00;
+  padding: 10px;
+  font-family: monospace;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 1px gray;
+  overflow-y: auto;
+}
+
+span {
+  margin-right: 1ch;
+}
+
+input {
+  max-width: 100%;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.input-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.input-container input {
+  background: transparent;
+  border: none;
+  color: #00ff00;
+  outline: none;
+  caret-color: transparent;
+  font-family: monospace;
+  padding: 0;
+  margin: 0;
+  min-width: 1ch;
+}
+
+.measure-text {
+  visibility: hidden;
+  position: absolute;
+  white-space: pre;
+  font-family: monospace;
+  pointer-events: none;
+}
+
+.input-container::after {
+  content: '';
+  display: inline-block;
+  width: 1ch;
+  height: 1em;
+  background-color: #00ff00;
+  position: absolute;
+  left: calc(100% - 1ch);
+  top: 50%;
+  transform: translateY(-50%);
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
